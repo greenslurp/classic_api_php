@@ -30,27 +30,27 @@ Use these steps to install and equip this repository.
 
 1. [Clone this repository.](https://github.com/salsalabs/classic_api_php)
 1. [Install composer.](https://getcomposer.org/)
-1. Install dependencies (below)
-
-## Install dependencies
-
-Use these lines in the shell to install the dependencies.
-
+1. Install dependencies
 ``` bash
 composer require guzzlehttp/http
 composer require symfony/yaml
 composer upgrade
 ```
-
 # Logging in to the API
 
-The apps in this repository use `credentials.yaml` to provide these parameters for gaining access to the Salsa Classic API:
+The apps in this repository use `credentials.yaml` to provide the parameters for gaining access to the Salsa Classic API.
 
 * API URL
 * email
 * password
-* other parameters
 
+Here is a sample credentials.yaml that you can use.
+```
+api_host: https://wfc2.wiredforchange.com
+email: aleonard@salsalabs.com
+password: a-really-long-and-complicated-password
+whatever: 123456
+```
 # Usage
 
 Make sure that the contents of `credentials.yaml` are correct, then type
