@@ -10,7 +10,7 @@
         // are not valid if there's not a `supporter_KEY` parameter.
         $cred =  Yaml::parseFile('./credentials.yaml');
         if  (FALSE == array_key_exists('supporter_KEY', $cred)) {
-            throw new Exception("File credentials.yaml just contain a supporter_KEY for this application.");
+            throw new Exception("File credentials.yaml must contain a supporter_KEY for this application.");
         }
         return $cred;
     }
@@ -42,10 +42,8 @@
         return $client;
     }
 
+    // Read the supporter having the supporter_KEY in the credentials file.
     function get_supporter($client, $cred) {
-        // The Guzzle client contains a cookie jar.  That needs to go
-        // to the downstream read.
-
         $command = "/api/getObject.sjs";
         $queries = [
             query => [
