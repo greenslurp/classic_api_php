@@ -37,7 +37,7 @@
     
     try {
         $response = $client->request($method, $command, $queries);
-        $data = json_decode($response -> getBody());
+        $data = json_decode($response -> getBody() -> getContents());
         if ($data->status == 'error') {
             throw new Exception($data->message);
         }
@@ -68,7 +68,7 @@
 
     try {
         $response = $client->request($method, $command, $queries);
-        $data = json_decode($response -> getBody());
+        $data = json_decode($response -> getBody() -> getContents());
         // echo json_encode($data, JSON_PRETTY_PRINT);
         if ($data->status == 'error') {
             throw new Exception($data->message);

@@ -32,8 +32,7 @@
     
     try {
         $response = $client->request($method, $command, $queries);
-        echo("body is " . $response -> getBody() . "\n");
-        $data = json_decode($response -> getBody());
+        $data = json_decode($response -> getBody() -> getContents());
         echo json_encode($data, JSON_PRETTY_PRINT);
     } catch (Exception $e) {
     echo 'Caught exception: ',  $e->getMessage(), "\n";

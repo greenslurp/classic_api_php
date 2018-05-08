@@ -36,7 +36,7 @@
     
     try {
         $response = $client->request($method, $command, $queries);
-        $data = json_decode($response -> getBody());
+        $data = json_decode($response -> getBody() -> getContents());
         if ($data->status == 'error') {
             throw new Exception($data->message);
         }
@@ -72,7 +72,7 @@
             $count = min($count, 500);
             $queries['query']['limit'] = $offset . ',' + $count;
             $response = $client->request($method, $command, $queries);
-            $data = json_decode($response -> getBody());
+            $data = json_decode($response -> getBody() -> getContents());
             // print_r json_encode($data, JSON_PRETTY_PRINT);
             if ($data->status == 'error') {
                 throw new Exception($data->message);
