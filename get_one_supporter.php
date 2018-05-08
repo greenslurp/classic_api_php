@@ -44,10 +44,7 @@
 
     function get_supporter($client, $cred) {
         // The Guzzle client contains a cookie jar.  That needs to go
-        // to the downstream read.  PLEASE NOTE that this is a demonstration
-        // of a single read.  Salsa limits the number of records to 500
-        // per read.  Generally, that means that you won't get everyrhing
-        // in the database.  See the "read_all" example.
+        // to the downstream read.
 
         $command = "/api/getObject.sjs";
         $queries = [
