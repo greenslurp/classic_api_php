@@ -5,6 +5,10 @@
     use Symfony\Component\Yaml\Yaml;
     use GuzzleHttp\Cookie\CookieJar;
 
+    // -------------------------------------------------------------------
+    // Work in progress.  getLeftJoin.sjs conditions is slowing things up.
+    // -------------------------------------------------------------------
+    
     function initialize() {
         // Read the contents of credentials.yaml.  The credentials
         // are not valid if there's not a `supporter_KEY` parameter.
